@@ -7,8 +7,8 @@
 Clone the repo and navigate to the folder
 
 ```bash
-git clone https://github.com/MathieuGood/switchbot_temperature_logger.git
-cd switchbot_temperature_logger
+git clone https://github.com/MathieuGood/temperature_monitor.git
+cd temperature_monitor
 ```
 
 Create a virtual environment and activate it
