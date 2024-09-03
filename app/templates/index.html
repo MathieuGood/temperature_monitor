@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='style.css') }}"
+			type="text/css" />
+		<title>Températures</title>
+	</head>
+	<body>
+		<div class="main">
+            {% for device in devices %}
+                <div class="temp-block" id="block{{ loop.index }}">
+                    <span class="name">{{ device['deviceName'] }}</span>
+                    <div class="temp-humidity-container">
+                        <span class="temp">{{ device['temperature'] }}°</span>
+                        <span class="humidity">{{ device['humidity'] }}%</span>
+                    </div>
+                </div>
+            {% endfor %}
+			</div>
+		</div>
+	</body>
+</html>
