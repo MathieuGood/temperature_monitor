@@ -8,7 +8,7 @@ class CRUD:
     def get_all_temperatures(self):
         with self.conn.cursor() as cursor:
             cursor.execute(
-                "SELECT timestamp, temperature, humidity, name AS room FROM records INNER JOIN devices ON records.device_id = devices.id LIMIT 4"
+                "SELECT timestamp, temperature, humidity, name AS room FROM records INNER JOIN devices ON records.device_id = devices.id WHERE timestamp = (SELECT timestamp FROM records ORDER BY timestamp DESC LIMIT 1)"
             )
             return cursor.fetchall()
 
